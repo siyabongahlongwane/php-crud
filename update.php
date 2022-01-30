@@ -15,7 +15,6 @@ if (isset($_POST['submit'])) {
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
     if (!empty($name) && !empty($mobile) && !empty($email) && !empty($password)) {
-        echo "not empty";
         $updateQuery = "UPDATE `user` set id = $id, name = '$name', email = '$email', mobile = '$mobile', password = '$password' WHERE id = $id";
         $result = mysqli_query($conn, $updateQuery);
         if ($result) {
@@ -23,8 +22,6 @@ if (isset($_POST['submit'])) {
         } else {
             die(mysqli_error($conn));
         }
-    } else {
-        echo " empty";
     }
 }
 ?>
